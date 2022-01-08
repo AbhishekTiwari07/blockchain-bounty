@@ -3,6 +3,7 @@ const {Schema} = mongoose;
 
 const bountySchema = Schema({
     name: String,
+    email: String,
     reward: Number,
     content: String,
     limit: Date,

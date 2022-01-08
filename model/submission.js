@@ -3,6 +3,7 @@ const {Schema} = mongoose;
 
 const submissionSchema = Schema({
     name: String,
+    email: String,
     content: String,
     owner: String,
     submission: [{

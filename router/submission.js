@@ -5,8 +5,8 @@ require('dotenv').config();
 
 router.get('/all', async (req, res)=>{
     try{
-        const bounties = await Bounty.find();
-        res.status(200).send(bounties);
+        const submission = await Submission.find();
+        res.status(200).send(submission);
     }
     catch(e){
         res.statud(400).send({
@@ -17,10 +17,10 @@ router.get('/all', async (req, res)=>{
 
 router.get('/owned', auth, async (req, res)=>{
     try{
-        const bounties = await Bounty.find({
+        const submission = await Submission.find({
             email: req.user.email
         });
-        res.status(200).send(bounties);
+        res.status(200).send(submission);
     }
     catch(e){
         res.status(400).send({
