@@ -1,6 +1,7 @@
 const express = require('express');
 const user = require('./router/user');
 const bounty = require('./router/bounty');
+const cors = require('cors')
 require('dotenv').config();
 require('./db/db')
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors());
 
 app.use('/user', user);
 app.use('/bounty', user);
